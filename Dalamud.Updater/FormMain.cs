@@ -503,10 +503,11 @@ namespace Dalamud.Updater
                 RuntimeDirectory = runtimeDirectory.FullName,
                 AssetDirectory = this.dalamudUpdater.AssetDirectory.FullName,
                 GameVersion = gameVerStr,
-                Language = "4",
+                Language = "korean",
                 OptOutMbCollection = false,
                 WorkingDirectory = dalamudPath,
-                DelayInitializeMs = injectDelay
+                DelayInitializeMs = injectDelay,
+                LogDirectory = xivlauncherDir,
             };
 
             return startInfo;

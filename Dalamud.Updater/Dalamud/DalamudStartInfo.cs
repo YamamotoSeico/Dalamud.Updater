@@ -19,5 +19,7 @@ namespace XIVLauncher.Common.Dalamud
         public bool OptOutMbCollection;
 
         public bool GlobalAccelerate;
+
+        public string LogDirectory;
     }
 }
