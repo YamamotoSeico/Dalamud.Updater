@@ -26,7 +26,8 @@ public static class WindowsDalamudRunner
             $"--dalamud-dev-plugin-directory=\"{startInfo.DefaultPluginDirectory}\"",
             $"--dalamud-asset-directory=\"{startInfo.AssetDirectory}\"",
             $"--dalamud-client-language={startInfo.Language}",
-            $"--dalamud-delay-initialize={startInfo.DelayInitializeMs}"
+            $"--dalamud-delay-initialize={startInfo.DelayInitializeMs}",
+            $"--logpath={startInfo.LogDirectory}",
         };
 
         if (safeMode) launchArguments.Add("--no-plugin");
