@@ -19,7 +19,7 @@ namespace Dalamud.Updater
 {
     public partial class FormMain : Form
     {
-        private const string UPDATEURL = "https://xlweb.xivpf.xyz/Dalamud/Asset/Meta";
+        private const string UPDATEURL = "https://xlweb.xivpf.xyz/Updater/Release/VersionInfo";
         private const string DOHWAHOME = "문의 : 달라가브 KR 디스코드 https://discord.gg/Fdb9TTW9aD";
 
         // private List<string> pidList = new List<string>();
