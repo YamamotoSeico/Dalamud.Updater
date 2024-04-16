@@ -19,8 +19,8 @@ namespace Dalamud.Updater
 {
     public partial class FormMain : Form
     {
-        private const string UPDATEURL = "https://raw.githubusercontent.com/dohwacorp/DalamudResource/main/UpdaterVersionInfo";
-        private const string OTTERHOME = "문의 : 달라가브 KR 디스코드 https://discord.gg/Fdb9TTW9aD";
+        private const string UPDATEURL = "https://xlweb.xivpf.xyz/Dalamud/Asset/Meta";
+        private const string DOHWAHOME = "문의 : 달라가브 KR 디스코드 https://discord.gg/Fdb9TTW9aD";
 
         // private List<string> pidList = new List<string>();
         private bool firstHideHint = true;
@@ -383,7 +383,7 @@ namespace Dalamud.Updater
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"{ex.Message}\n\n{OTTERHOME}", "업데이트 실패",
+                        MessageBox.Show($"{ex.Message}\n\n{DOHWAHOME}", "업데이트 실패",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
@@ -393,7 +393,7 @@ namespace Dalamud.Updater
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"{ex.Message}\n\n{OTTERHOME}", "업데이트 실패",
+                MessageBox.Show($"{ex.Message}\n\n{DOHWAHOME}", "업데이트 실패",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }

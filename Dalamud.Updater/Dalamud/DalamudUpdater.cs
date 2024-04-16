@@ -47,10 +47,10 @@ namespace XIVLauncher.Common.Dalamud
         private readonly DirectoryInfo assetDirectory;
         private readonly DirectoryInfo configDirectory;
         //private readonly IUniqueIdCache? cache;
-        public const string REMOTE_BASE = "https://raw.githubusercontent.com/dohwacorp/DalamudResource/";
-        public const string REMOTE_VERSION = REMOTE_BASE + "main/VersionInfo.";
-        public const string REMOTE_DOTNET = REMOTE_BASE + "main/dotnet-runtime-{0}-win-x64.zip";
-        public const string REMOTE_DESKTOP = REMOTE_BASE + "main/windowsdesktop-runtime-{0}-win-x64.zip";
+        public const string REMOTE_BASE = "https://xlweb.xivpf.xyz/";
+        public const string REMOTE_VERSION = REMOTE_BASE + "Dalamud/Release/VersionInfo?track=";
+        public const string REMOTE_DOTNET = REMOTE_BASE + "Dalamud/Release/Runtime/DotNet/{0}";
+        public const string REMOTE_DESKTOP = REMOTE_BASE + "Dalamud/Release/Runtime/WindowsDesktop/{0}";
         private readonly TimeSpan defaultTimeout = TimeSpan.FromMinutes(25);
         private static string onlineHash = string.Empty;
 
