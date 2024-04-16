@@ -74,7 +74,7 @@ jobs:
           # asset_content_type: application/zip
         
       - name: Clear Web Services cache
-        run: curl -X POST --fail https://xlweb.xivpf.xyz/Dalamud/Release/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
+        run: curl -X POST --fail https://xlweb.xivpf.xyz/Updater/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
   build:
     name: Build on Windows
     runs-on: windows-2022
@@ -107,4 +107,4 @@ jobs:
           path: Dalamud.Updater\bin\Release\net48
         
       - name: Clear Web Services cache
-        run: curl -X POST --fail https://xlweb.xivpf.xyz/Dalamud/Release/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
+        run: curl -X POST --fail https://xlweb.xivpf.xyz/Updater/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
