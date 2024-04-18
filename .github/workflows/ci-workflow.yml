@@ -45,33 +45,34 @@ jobs:
           $HASH = (Get-FileHash .\release.zip -Algorithm MD5).Hash
           "HASH=$HASH" >> $env:GITHUB_OUTPUT
           
+      - name: Create Release
+        uses: softprops/action-gh-release@91409e712cf565ce9eff10c87a8d1b11b81757ae
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: .\release.zip
+          name: Release ${{ github.ref }}
+          body: "Hash: ${{ steps.hash.outputs.HASH }}"
+          prerelease: true
       # - name: Create Release
-        # uses: softprops/action-gh-release@91409e712cf565ce9eff10c87a8d1b11b81757ae
+        # id: create_release
+        # uses: actions/create-release@v1
         # env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # with:
-          # files: .\release.zip
-          # name: Release ${{ github.ref }}
+          # tag_name: ${{ github.ref }}
+          # release_name: Release ${{ github.ref }}
+          # body: "Hash: ${{ steps.hash.outputs.HASH }}"
           # prerelease: true
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: "Hash: ${{ steps.hash.outputs.HASH }}"
-          prerelease: true
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release.zip
-          asset_name: release.zip
-          asset_content_type: application/zip
+      # - name: Upload Release Asset
+        # uses: actions/upload-release-asset@v1
+        # env:
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+          # upload_url: ${{ steps.create_release.outputs.upload_url }}
+          # asset_path: ./release.zip
+          # asset_name: release.zip
+          # asset_content_type: application/zip
         
       - name: Clear Web Services cache
         run: curl -X POST --fail https://xlweb.xivpf.xyz/Updater/ClearCache?key=${{ secrets.CACHE_CLEAR_KEY }}
