@@ -19,8 +19,8 @@ namespace Dalamud.Updater
 {
     public partial class FormMain : Form
     {
-        private const string UPDATEURL = "https://xlweb.xivpf.xyz/Updater/Release/VersionInfo";
-        private const string DOHWAHOME = "문의 : 달라가브 KR 디스코드 https://discord.gg/Fdb9TTW9aD";
+        private const string UPDATEURL = "https://raw.githubusercontent.com/n0bi1/Updater/main/VersionInfo.json";
+        private const string DOHWAHOME = "https://gall.dcinside.com/board/lists/?id=ff14";
 
         // private List<string> pidList = new List<string>();
         private bool firstHideHint = true;

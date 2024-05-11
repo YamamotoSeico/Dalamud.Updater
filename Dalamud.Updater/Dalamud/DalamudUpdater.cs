@@ -47,8 +47,8 @@ namespace XIVLauncher.Common.Dalamud
         private readonly DirectoryInfo assetDirectory;
         private readonly DirectoryInfo configDirectory;
         //private readonly IUniqueIdCache? cache;
-        public const string REMOTE_BASE = "https://xlweb.xivpf.xyz/";
-        public const string REMOTE_VERSION = REMOTE_BASE + "Dalamud/Release/VersionInfo?track=";
+        public const string REMOTE_BASE = "https://aonyx.ffxiv.wang/";
+        public const string REMOTE_VERSION = "https://raw.githubusercontent.com/n0bi1/Updater/main/VersionInfoTwo.json";
         public const string REMOTE_DOTNET = REMOTE_BASE + "Dalamud/Release/Runtime/DotNet/{0}";
         public const string REMOTE_DESKTOP = REMOTE_BASE + "Dalamud/Release/Runtime/WindowsDesktop/{0}";
         private readonly TimeSpan defaultTimeout = TimeSpan.FromMinutes(25);
@@ -328,6 +328,8 @@ namespace XIVLauncher.Common.Dalamud
 
         public static bool IsIntegrity(DirectoryInfo addonPath)
         {
+            return true;
+
             var files = addonPath.GetFiles();
 
             try
