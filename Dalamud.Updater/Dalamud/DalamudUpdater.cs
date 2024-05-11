@@ -177,7 +177,7 @@ namespace XIVLauncher.Common.Dalamud
                 NoCache = true,
             };
 
-            var versionInfoJsonRelease = await client.GetStringAsync(REMOTE_VERSION + "release").ConfigureAwait(false);
+            var versionInfoJsonRelease = await client.GetStringAsync(REMOTE_VERSION).ConfigureAwait(false);
 
             DalamudVersionInfo versionInfoRelease = JsonConvert.DeserializeObject<DalamudVersionInfo>(versionInfoJsonRelease);
 
@@ -185,7 +185,7 @@ namespace XIVLauncher.Common.Dalamud
 
             if (!string.IsNullOrEmpty(settings.DalamudBetaKey))
             {
-                var versionInfoJsonStaging = await client.GetAsync(REMOTE_VERSION + GetBetaTrackName(settings)).ConfigureAwait(false);
+                var versionInfoJsonStaging = await client.GetAsync(REMOTE_VERSION).ConfigureAwait(false);
 
                 if (versionInfoJsonStaging.StatusCode == HttpStatusCode.OK)
                     versionInfoStaging = JsonConvert.DeserializeObject<DalamudVersionInfo>(await versionInfoJsonStaging.Content.ReadAsStringAsync().ConfigureAwait(false));
